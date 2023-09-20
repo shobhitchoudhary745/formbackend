@@ -1,43 +1,44 @@
-const mongoos = require("mongoose");
+const mongoose = require("mongoose");
 
-const formSchema = new mongoos.Schema({
-  title: {
+const userSchema = new mongoose.Schema({
+  firstName: {
     type: String,
-    default: "My Form",
     trim: true,
   }, 
-  fields: [
-    {
-      question: {
-        type: String,
-        required: [true, "This is a required field"],
-        trim: true,
-      },
-      answers: {
-        type: String,
-        trim: true,
-      },
-      placeholder: {
-        type: String,
-        trim: true,
-      },
-      type: {
-        type: String,
-        trim: true,
-        required: true,
-      },
-      required: {
-        type: Boolean,
-        default: false,
-      },
-    },
-  ],
-  createdAt: {
-    type: Date,
-    default: Date.now(),
+  lastName: {
+    type: String,
+    trim: true,
+  }, 
+  email:{
+    type:String,
+    unique:true,
+    trim:true
   },
+  country:{
+    type:String,
+    trim:true
+  },
+  state:{
+    type:String,
+    trim:true
+  },
+  city:{
+    type:String,
+    trim:true
+  },
+  gender:{
+    type:String,
+    trim:true
+  },
+  dob:{
+    type:String,
+    trim:true
+  },
+  age:{
+    type:String,
+  }
 });
 
-const Form = mongoos.model("Form", formSchema);
+const Form = mongoose.model("UserSchema", userSchema);
 
 module.exports = Form;

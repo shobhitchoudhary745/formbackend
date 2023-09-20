@@ -5,9 +5,4 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => {
-    
-  })
-  .catch((error) => {
-    
-  });
+
